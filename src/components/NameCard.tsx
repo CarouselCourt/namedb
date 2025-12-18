@@ -242,7 +242,10 @@ export const NameCard = ({ name, onEdit, onDelete, onToggleUsed, onSetStatus, si
               {/* Only show most specific origins (hide parent categories if child exists) */}
               {(() => {
                 // If displaying a variant with an alternateOrigin, use that instead
-                let originsToDisplay = name.origin || [];
+                // Normalize origin to array (it may be a string or array)
+                let originsToDisplay = Array.isArray(name.origin) 
+                  ? name.origin 
+                  : (name.origin ? [name.origin] : []);
                 
                 if (name.displayName && !name.isPrimarySpelling) {
                   const variantData = name.relatedNames?.find(r => r.name === name.displayName);

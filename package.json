@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "cross-env VITE_AUTO_COMMIT=1 VITE_COMMIT_MESSAGE=\"Auto-update names.json\" VITE_NAME_SERVER_URL=\"http://localhost:4000\" vite",
+  "dev": "vite",
   "server": "node server/file-storage.cjs",
   "dev:server": "cross-env AUTO_COMMIT=1 COMMIT_MESSAGE=\"Auto-update names.json\" node server/file-storage.cjs",
   "dev:all": "concurrently \"npm:dev:server\" \"npm:dev\" --names \"server,vite\" --prefix \"[{name}]\"",

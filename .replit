@@ -6,8 +6,8 @@ expertMode = true
 channel = "stable-25_05"
 
 [deployment]
-deploymentTarget = "autoscale"
-run = ["node", "./dist/index.cjs"]
+deploymentTarget = "vm"
+run = ["node", "server/file-storage.cjs"]
 build = ["npm", "run", "build"]
 
 [workflows]
